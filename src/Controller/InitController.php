@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class InitController extends AbstractController
 {
     #[Route('/', name: 'app_init')]
-    public function index(): Response
+    public function init(): Response
     {
         return $this->render('init/index.html.twig', [
             'controller_name' => 'InitController',

@@ -1,20 +1,70 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InitController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        <header>
+        <!-- Intro settings -->
+        <style>
+            /* Default height for small devices */
+            #intro-example {
+            height: 400px;
+            }
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            /* Height for devices larger than 992px */
+            @media (min-width: 992px) {
+            #intro-example {
+                height: 600px;
+            }
+            }
+        </style>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/cepaq/OneDrive/Escritorio/Hackathon/Publi-DSAR/src/Controller/InitController.php'|file_link(0) }}">src/Controller/InitController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/cepaq/OneDrive/Escritorio/Hackathon/Publi-DSAR/templates/init/index.html.twig'|file_link(0) }}">templates/init/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="#">PUBLI-DSAR</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ingresar</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Background image -->
+        <div id="intro-example" class="p-5 text-center bg-image"
+            style="background-image: url('https://img.freepik.com/free-vector/colorful-icons-set_79603-1266.jpg?w=740&t=st=1688873614~exp=1688874214~hmac=36fa6cd9aea68f8925cbe06cbba9ad1bd199f4ad1c82cad9bc97c6847a220fe4');">
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                <h1 class="mb-3">PUBLI-DSAR</h1>
+                <h5 class="mb-4">
+                    La mejor forma para mejorar y gestionar tu contenido deredes sociales
+                </h5>
+                <a class="btn btn-outline-light btn-lg m-2" href="https://www.youtube.com/watch?v=c9B4TPnak1A"
+                    role="button" rel="nofollow" target="_blank">Tutorial</a>
+                <a class="btn btn-outline-light btn-lg m-2" href="{{path('app_home')}}"
+                     role="button">Comenzar</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Background image -->
+        </header>
 {% endblock %}
