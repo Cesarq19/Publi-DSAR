@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -12,6 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * @ORM\Table(name="usuario", uniqueConstraints={@ORM\UniqueConstraint(name="usuario_correo_key", columns={"correo"})})
  * @ORM\Entity(repositoryClass="App\Repository\UsuarioRepository")
  */
+#[UniqueEntity(fields: ['correo'], message: 'There is already an account with this email')]
 class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
